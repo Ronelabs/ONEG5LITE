@@ -91,7 +91,7 @@ class BasePlugin:
                        "LevelNames": "Off|Auto|Blue On|Green On|Red On|Blue breathe|Green breathe|Red breathe|Blue blink slow|Green blink slow|Red blink slow|Blue blink fast|Green blink fast|Red blink fast",
                        "LevelOffHidden": "false",
                        "SelectorStyle": "0"}
-            Domoticz.Device(Name="Gateway LED", Unit=2, TypeName="Selector Switch", Switchtype=18, Options=Options, Used=1).Create()
+            Domoticz.Device(Name="Gateway LED", Unit=3, TypeName="Selector Switch", Switchtype=18, Options=Options, Used=1).Create()
             devicecreated.append(deviceparam(3, 0, "10"))  # default is Auto
 
         #if any device has been created in onStart(), now is time to update its defaults
