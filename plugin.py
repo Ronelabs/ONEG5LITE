@@ -100,13 +100,13 @@ class BasePlugin:
         for device in devicecreated:
             Devices[device.unit].Update(nValue=device.nvalue, sValue=device.svalue)
 
-        cmd1 = 'sudo insmod /home/tools/drivers/bq27xxx_battery.ko'
-        os.system(cmd1)
-        time.sleep(1)
-        cmd2 = 'sudo insmod /home/tools/drivers/bq25890_charger.ko'
-        os.system(cmd2)
-        time.sleep(1)
-        Domoticz.Debug("Adding drivers ok !")
+        #cmd1 = 'sudo insmod /home/tools/drivers/bq27xxx_battery.ko'
+        #os.system(cmd1)
+        #time.sleep(1)
+        #cmd2 = 'sudo insmod /home/tools/drivers/bq25890_charger.ko'
+        #os.system(cmd2)
+        #time.sleep(1)
+        #Domoticz.Debug("Adding drivers ok !")
 
         Devices[3].Update(nValue=1, sValue=str(10))
 
