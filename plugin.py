@@ -208,10 +208,10 @@ class BasePlugin:
         # cat UPS control....
         # Power supply
         self.PowerSupply = False
-        cmdPOWERSUP = 'cat /sys/class/power_supply/bq27546-0/present'
+        cmdPOWERSUP = 'sudo cat /sys/class/power_supply/bq27546-0/present'
         self.PowerPresent = sp.getoutput(cmdPOWERSUP)
         os.system(cmdPOWERSUP)
-        Domoticz.Debug("Ic2 return power supply present : {}".format(self.PowerPresent))
+        Domoticz.Debug("Hardware return power supply present : {}".format(self.PowerPresent))
         if self.PowerPresent == "1" :
             Domoticz.Debug("Power supply On")
             self.PowerSupply = True
@@ -226,11 +226,11 @@ class BasePlugin:
                 Devices[1].Update(nValue=0, sValue=Devices[1].sValue)
         # Battery level
         if self.LastBattUpdate + timedelta(seconds=60) <= now:
-            cmdLEVEL = 'cat /sys/class/power_supply/bq27546-0/capacity'
+            cmdLEVEL = 'sudo cat /sys/class/power_supply/bq27546-0/capacity'
             outputLEVEL = sp.getoutput(cmdLEVEL)
             self.BatteryLevel = int(outputLEVEL)
             os.system(cmdLEVEL)
-            Domoticz.Debug("Ic2 return battery level : {}".format(self.BatteryLevel))
+            Domoticz.Debug("Hardware return battery level : {}".format(self.BatteryLevel))
             if self.BatteryLevel >= 97 :
                 self.BatteryLevel = 100
             Devices[2].Update(nValue=self.BatteryLevel, sValue=str(self.BatteryLevel))
