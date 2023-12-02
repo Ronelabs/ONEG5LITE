@@ -212,7 +212,7 @@ class BasePlugin:
         # Power supply
         self.PowerSupply = False
         #cmdPOWERSUP = 'cat /sys/class/power_supply/bq27546-0/status'
-        cmdPOWERSUP = 'cat /sys/class/power_supply/bq27546-0/current_now
+        cmdPOWERSUP = 'cat /sys/class/power_supply/bq27546-0/current_now'
         outputPOWER = sp.getoutput(cmdPOWERSUP)
         os.system(cmdPOWERSUP)
         self.PowerPresent = int(outputPOWER)
