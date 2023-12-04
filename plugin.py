@@ -122,7 +122,7 @@ class BasePlugin:
                 self.ResetLED()
                 self.LEDpowerOn = 1
                 Devices[3].Update(nValue=1, sValue="10")
-                cmdLED = 'sudo /etc/init.d/ledautocontrol restart'
+                cmdLED = 'sudo /etc/init.d/ledauto restart'
                 os.system(cmdLED)
                 self.Modeauto = True
             else : # Manual control
